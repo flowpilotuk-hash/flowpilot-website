@@ -1,0 +1,57 @@
+{% from "components/ui.njk" import icon, logo %}
+<footer class="on-dark border-t border-white/10">
+  <div class="shell py-16 lg:py-20">
+    <div class="grid gap-12 lg:grid-cols-12">
+      {# --- Brand --- #}
+      <div class="lg:col-span-5">
+        <a href="/" class="inline-flex items-center rounded-lg" aria-label="{{ site.brand }} — home">
+          {{ logo(dark=true) }}
+        </a>
+        <p class="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-neutral-400">
+          {{ site.description }}
+        </p>
+        <div class="mt-6 flex flex-col gap-2 text-[0.95rem]">
+          <a href="mailto:{{ site.contact.email }}" class="inline-flex items-center gap-2.5 text-neutral-300 transition-colors hover:text-white">
+            {{ icon("mail", "h-4 w-4 text-chartreuse-400") }} {{ site.contact.email }}
+          </a>
+          <a href="tel:{{ site.contact.phone }}" class="inline-flex items-center gap-2.5 text-neutral-300 transition-colors hover:text-white">
+            {{ icon("phone", "h-4 w-4 text-chartreuse-400") }} {{ site.contact.phoneDisplay }}
+          </a>
+        </div>
+      </div>
+
+      {# --- Sitemap --- #}
+      <div class="lg:col-span-3 lg:col-start-8">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-neutral-500">Pages</h2>
+        <ul class="mt-4 flex flex-col gap-3">
+          {% for item in site.nav %}
+            <li>
+              <a href="{{ item.url }}" class="text-[0.95rem] text-neutral-300 transition-colors hover:text-white">{{ item.label }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {# --- Hours --- #}
+      <div class="lg:col-span-2">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-neutral-500">Hours</h2>
+        <ul class="mt-4 flex flex-col gap-3">
+          {% for h in site.contact.hours %}
+            <li class="text-[0.95rem] text-neutral-400">
+              <span class="block text-neutral-300">{{ h.day }}</span>
+              {{ h.time }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-sm text-neutral-500 sm:flex-row sm:items-center">
+      <p>&copy; <span data-year>{{ "" | year }}</span> {{ site.legalName }}. All rights reserved.</p>
+      <p class="inline-flex items-center gap-2">
+        <span class="inline-flex h-2 w-2 rounded-full bg-chartreuse-400"></span>
+        Built and looked after in the UK.
+      </p>
+    </div>
+  </div>
+</footer>

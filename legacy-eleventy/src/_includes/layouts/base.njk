@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0B0B0C" />
+
+    {# --- Titles & description --- #}
+    {%- set pageTitle = title if title else site.tagline -%}
+    {%- set metaDesc = description if description else site.description -%}
+    <title>{{ pageTitle }}{% if title %} — {{ site.brand }}{% else %} · {{ site.brand }}{% endif %}</title>
+    <meta name="description" content="{{ metaDesc }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    {# --- Open Graph / Twitter --- #}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.brand }}" />
+    <meta property="og:title" content="{{ pageTitle }} — {{ site.brand }}" />
+    <meta property="og:description" content="{{ metaDesc }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ pageTitle }} — {{ site.brand }}" />
+    <meta name="twitter:description" content="{{ metaDesc }}" />
+
+    {# --- Icons --- #}
+    <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/favicon/favicon.svg" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    {# --- Fonts (preconnected, swap for no layout shift) --- #}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap"
+    />
+
+    {# --- Styles --- #}
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    {# --- Structured data: Organization --- #}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "{{ site.brand }}",
+        "description": "{{ site.description }}",
+        "url": "{{ site.url }}",
+        "email": "{{ site.contact.email }}",
+        "telephone": "{{ site.contact.phone }}",
+        "areaServed": "GB",
+        "priceRange": "££",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "GB"
+        },
+        "openingHours": "Mo-Fr 09:00-17:00"
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-white antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-medium focus:text-white"
+      >Skip to content</a
+    >
+
+    {% include "partials/header.njk" %}
+
+    <main id="main">{{ content | safe }}</main>
+
+    {% include "partials/footer.njk" %}
+
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "FlowPilot UK",
+  "short_name": "FlowPilot",
+  "description": "Professional websites and digital tools for small businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0C",
+  "theme_color": "#0B0B0C",
+  "icons": [
+    {
+      "src": "/assets/favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

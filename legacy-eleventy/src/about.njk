@@ -1,0 +1,108 @@
+---
+layout: layouts/base.njk
+title: About
+description: We started FlowPilot UK because small businesses deserve professional online tools without expensive agencies, confusing processes or wasted time. Our mission is simple — make it straightforward.
+permalink: /about/
+---
+{% from "components/ui.njk" import icon, ctaBand, pageHero %}
+
+{{ pageHero(
+  "About us",
+  "Built for small businesses. On purpose.",
+  "We're not here to dazzle you with jargon or sell you things you don't need. We're here to make getting online genuinely simple — and to stay useful long after launch."
+) }}
+
+{# ============================================================= MISSION #}
+<section class="section-tight">
+  <div class="shell">
+    <div class="mx-auto max-w-3xl reveal">
+      <p class="font-display text-2xl font-medium leading-snug text-ink sm:text-[2rem] sm:leading-[1.25]">
+        We believe small businesses deserve professional online tools without
+        expensive agencies, confusing processes or wasted time.
+      </p>
+      <div class="mt-8 space-y-5 text-lg leading-relaxed text-neutral-600">
+        <p>
+          Too many talented business owners are let down by their online presence.
+          Not because they don't care — but because getting a good website has
+          become slow, confusing and expensive. Endless meetings. Quotes full of
+          jargon. Agencies that vanish the moment the invoice is paid.
+        </p>
+        <p>
+          We started FlowPilot to do the opposite. To treat a plumber, a groomer or
+          a solicitor with the same care a big company expects — and to make the
+          whole thing feel calm and straightforward instead of stressful.
+        </p>
+        <p class="font-medium text-ink">
+          Our goal is simple: to make improving your online presence straightforward.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================================= WHAT WE BELIEVE #}
+<section class="section bg-neutral-50">
+  <div class="shell">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="reveal lg:col-span-4">
+        <span class="eyebrow">What we believe</span>
+        <h2 class="mt-4 text-display-sm">The way we work is the whole point.</h2>
+        <p class="mt-4 text-lg leading-relaxed text-neutral-600">
+          These aren't slogans. They're the commitments that decide how we treat
+          every business we work with.
+        </p>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="grid gap-5 sm:grid-cols-2">
+          {% for p in principles %}
+            <div class="reveal reveal-delay-{{ loop.index0 % 2 }} rounded-2xl border border-neutral-200 bg-white p-7 transition-all duration-300 ease-gentle hover:-translate-y-1 hover:shadow-soft">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-ink text-chartreuse-400">
+                {{ icon(["clock-fast","spark","handshake","shield"][loop.index0], "h-5 w-5") }}
+              </span>
+              <h3 class="mt-5 text-lg font-semibold text-ink">{{ p.title }}</h3>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-neutral-500">{{ p.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================================= WHO WE HELP #}
+<section class="section">
+  <div class="shell">
+    <div class="mx-auto max-w-2xl text-center reveal">
+      <span class="eyebrow">Who we help</span>
+      <h2 class="mt-4 text-display-sm">Local businesses, doing real work.</h2>
+      <p class="lede mx-auto mt-4">
+        The people who keep our towns and high streets running. If you serve a
+        local community, you're exactly who we build for.
+      </p>
+    </div>
+    <div class="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-3 reveal">
+      {% set trades = ["Trades", "Dog groomers", "Hair salons", "Beauticians", "Restaurants", "Accountants", "Solicitors", "Consultants", "Local services"] %}
+      {% for t in trades %}
+        <span class="rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700">{{ t }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ============================================================= PROMISE STRIP #}
+<section class="section on-dark relative overflow-hidden">
+  <div class="pointer-events-none absolute inset-0 grid-lines opacity-50"></div>
+  <div class="shell relative">
+    <div class="mx-auto max-w-3xl text-center reveal">
+      <span class="eyebrow">Our promise</span>
+      <p class="mt-6 font-display text-2xl font-medium leading-snug text-white sm:text-3xl">
+        “If we care this much about our own website, imagine how we'll care about yours.”
+      </p>
+      <p class="mt-6 text-lg text-neutral-400">
+        That's the standard we hold ourselves to — every business, every time.
+      </p>
+    </div>
+  </div>
+</section>
+
+{{ ctaBand() }}

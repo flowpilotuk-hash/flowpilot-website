@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  :root {
+    --header-h: 4.5rem;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+  }
+
+  body {
+    @apply bg-white text-neutral-800 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, on-brand focus ring for keyboard users only. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-chartreuse-500 ring-offset-2 ring-offset-white rounded-sm;
+  }
+
+  .on-dark :focus-visible {
+    @apply ring-chartreuse-400 ring-offset-ink-900;
+  }
+
+  ::selection {
+    background: #c6f135;
+    color: #0b0b0c;
+  }
+
+  /* Respect users who prefer reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+@layer components {
+  /* --- Layout helpers ---------------------------------------------------- */
+  .section {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+  .section-tight {
+    @apply py-16 sm:py-20;
+  }
+  .shell {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+  .shell-narrow {
+    @apply mx-auto w-full max-w-3xl px-5 sm:px-6;
+  }
+
+  /* --- Eyebrow label ----------------------------------------------------- */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-medium tracking-wide text-neutral-500;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-1.5 w-1.5 rounded-full bg-chartreuse-400;
+  }
+  .on-dark .eyebrow {
+    @apply text-neutral-400;
+  }
+
+  /* --- Buttons ----------------------------------------------------------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.95rem] font-medium
+           transition-all duration-200 ease-gentle select-none whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-white hover:bg-ink-700 hover:-translate-y-0.5 active:translate-y-0 shadow-soft;
+  }
+  .btn-accent {
+    @apply btn bg-chartreuse-400 text-ink font-semibold hover:bg-chartreuse-300 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply btn border border-neutral-300 bg-white text-ink hover:border-neutral-400 hover:bg-neutral-50;
+  }
+  .btn-ghost {
+    @apply btn text-ink hover:bg-neutral-100;
+  }
+  .on-dark .btn-primary {
+    @apply bg-white text-ink hover:bg-neutral-100;
+  }
+  .on-dark .btn-outline {
+    @apply border-white/20 bg-transparent text-white hover:border-white/40 hover:bg-white/5;
+  }
+  .on-dark .btn-ghost {
+    @apply text-white hover:bg-white/10;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 font-medium text-ink transition-colors hover:text-chartreuse-600;
+  }
+  .link-arrow svg {
+    @apply transition-transform duration-200 ease-gentle;
+  }
+  .link-arrow:hover svg {
+    @apply translate-x-0.5;
+  }
+  .on-dark .link-arrow {
+    @apply text-white hover:text-chartreuse-400;
+  }
+
+  /* --- Cards ------------------------------------------------------------- */
+  .card {
+    @apply rounded-2xl border border-neutral-200 bg-white p-8 transition-all duration-300 ease-gentle;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-soft-lg hover:border-neutral-300;
+  }
+  .on-dark .card {
+    @apply border-white/10 bg-ink-800;
+  }
+
+  /* --- Dark section wrapper ---------------------------------------------- */
+  .on-dark {
+    @apply bg-ink text-neutral-300;
+  }
+  .on-dark h1,
+  .on-dark h2,
+  .on-dark h3,
+  .on-dark h4 {
+    @apply text-white;
+  }
+
+  /* --- Hairline divider -------------------------------------------------- */
+  .hairline {
+    @apply border-neutral-200;
+  }
+  .on-dark .hairline {
+    @apply border-white/10;
+  }
+
+  /* --- Prose (long-form copy) ------------------------------------------- */
+  .lede {
+    @apply text-lg leading-relaxed text-neutral-600 sm:text-xl;
+  }
+  .on-dark .lede {
+    @apply text-neutral-300;
+  }
+
+  /* --- Header ------------------------------------------------------------ */
+  .site-header {
+    @apply fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-gentle;
+  }
+  .site-header.is-scrolled {
+    @apply bg-white/85 backdrop-blur-md border-b border-neutral-200/80 shadow-[0_1px_0_rgba(11,11,12,0.02)];
+  }
+  .site-header:not(.is-scrolled) {
+    @apply bg-transparent border-b border-transparent;
+  }
+  .nav-link {
+    @apply text-[0.95rem] text-neutral-600 transition-colors hover:text-ink;
+  }
+  .nav-link[aria-current="page"] {
+    @apply text-ink font-medium;
+  }
+
+  /* --- Mobile menu ------------------------------------------------------- */
+  .mobile-menu {
+    @apply fixed inset-0 top-[var(--header-h)] z-40 hidden flex-col bg-white px-5 pb-10 pt-6 lg:hidden;
+  }
+  .mobile-menu.is-open {
+    @apply flex;
+  }
+  .mobile-menu a {
+    @apply block border-b border-neutral-100 py-4 text-lg text-ink;
+  }
+
+  /* --- Accordion --------------------------------------------------------- */
+  .accordion-panel {
+    @apply overflow-hidden;
+    max-height: 0;
+    transition: max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-accordion-trigger][aria-expanded="true"] .accordion-icon {
+    @apply rotate-45;
+  }
+  .accordion-icon {
+    @apply transition-transform duration-300 ease-gentle;
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+@layer utilities {
+  /* Scroll-reveal: elements start hidden, .is-visible fades them up.
+     Falls back to visible if JS is off (see .no-js override below). */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .text-balance { text-wrap: balance; }
+  .grid-lines {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+}
+
+/* If JS never runs, don't leave reveal content invisible. */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}

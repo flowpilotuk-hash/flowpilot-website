@@ -1,0 +1,135 @@
+{#
+  Reusable UI macros
+  ------------------
+  Import in a template with:
+    {% from "components/ui.njk" import icon, logo, packageCard, ctaBand, check %}
+#}
+
+{# --- Inline SVG icon set (currentColor, crisp at any size) --------------- #}
+{% macro icon(name, cls="h-5 w-5") %}
+  {% if name == "check" %}
+    <svg class="{{ cls }}" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {% elif name == "arrow-right" %}
+    <svg class="{{ cls }}" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m0 0l-4.5-4.5M15 10l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {% elif name == "arrow-down" %}
+    <svg class="{{ cls }}" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v11m0 0l4.5-4.5M10 15l-4.5-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {% elif name == "plus" %}
+    <svg class="{{ cls }}" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4.5v11M4.5 10h11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+  {% elif name == "mail" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 5.5L20 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {% elif name == "phone" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2.2 2A16 16 0 014.5 6.2 2 2 0 016.5 4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  {% elif name == "clock" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4.2l2.8 1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {% elif name == "clock-fast" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h5M3 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="14" cy="12" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M14 8.5V12l2.4 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {% elif name == "chat" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 5.5h15a1 1 0 011 1v9a1 1 0 01-1 1H10l-4 3v-3H4.5a1 1 0 01-1-1v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  {% elif name == "shield" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 2.5v5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5v-5L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 12l2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {% elif name == "handshake" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8l3-1 4 3.5 4-3.5 3 1 4 4-2 2-3-2-4 3.5a1.5 1.5 0 01-2 0L6 12l-3 2-2-2 2-4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  {% elif name == "compass" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.6"/><path d="M15 9l-2 5-4 1 2-5 4-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  {% elif name == "spark" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c.5 4 2 5.5 6 6-4 .5-5.5 2-6 6-.5-4-2-5.5-6-6 4-.5 5.5-2 6-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+  {% elif name == "card" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.6"/></svg>
+  {% elif name == "calendar" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M4 9.5h16M8 4v3M16 4v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  {% elif name == "menu" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+  {% elif name == "close" %}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+  {% elif name == "star" %}
+    <svg class="{{ cls }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.8l2.3 4.7 5.2.8-3.8 3.7.9 5.2L10 13.9l-4.6 2.5.9-5.2L2.5 7.3l5.2-.8L10 1.8z"/></svg>
+  {% endif %}
+{% endmacro %}
+
+{# --- Wordmark / logo ---------------------------------------------------- #}
+{% macro logo(dark=false) %}
+  <span class="inline-flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight {{ 'text-white' if dark else 'text-ink' }}">
+    <span class="relative inline-flex h-8 w-8 items-center justify-center rounded-lg bg-ink {{ 'ring-1 ring-white/15' if dark }}">
+      <svg class="h-4 w-4 text-chartreuse-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 19L12 5l7 14-7-3.5L5 19z" fill="currentColor"/>
+      </svg>
+    </span>
+    <span>FlowPilot<span class="text-neutral-400"> UK</span></span>
+  </span>
+{% endmacro %}
+
+{# --- A single "included" line with a check --------------------------------- #}
+{% macro check(text, accent=false) %}
+  <li class="flex items-start gap-3">
+    <span class="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full {{ 'bg-chartreuse-400 text-ink' if accent else 'bg-chartreuse-100 text-chartreuse-700' }}">
+      {{ icon("check", "h-3.5 w-3.5") }}
+    </span>
+    <span class="text-[0.95rem] leading-relaxed">{{ text }}</span>
+  </li>
+{% endmacro %}
+
+{# --- Package card ------------------------------------------------------- #}
+{% macro packageCard(pkg) %}
+  {% set featured = pkg.recommended %}
+  <div class="relative flex h-full flex-col rounded-3xl border p-8 transition-all duration-300 ease-gentle
+    {{ 'border-transparent bg-ink text-neutral-300 shadow-soft-lg on-dark lg:-my-4 lg:py-12' if featured else 'border-neutral-200 bg-white hover:-translate-y-1 hover:shadow-soft-lg hover:border-neutral-300' }}">
+    {% if featured %}
+      <span class="absolute -top-3 left-8 inline-flex items-center gap-1.5 rounded-full bg-chartreuse-400 px-3.5 py-1 text-xs font-semibold text-ink">
+        {{ icon("star", "h-3 w-3") }} {{ pkg.badge }}
+      </span>
+    {% endif %}
+
+    <div class="flex-none">
+      <h3 class="text-xl font-semibold {{ 'text-white' if featured else 'text-ink' }}">{{ pkg.name }}</h3>
+      <p class="mt-2 text-sm leading-relaxed {{ 'text-neutral-400' if featured else 'text-neutral-500' }}">{{ pkg.description }}</p>
+    </div>
+
+    <div class="mt-6 flex items-end gap-1.5">
+      <span class="text-xs font-medium uppercase tracking-wide {{ 'text-neutral-500' if featured else 'text-neutral-400' }}">from</span>
+      <span class="font-display text-4xl font-semibold {{ 'text-white' if featured else 'text-ink' }}">{{ pkg.priceFrom | gbp }}</span>
+      <span class="pb-1 text-sm {{ 'text-neutral-500' if featured else 'text-neutral-400' }}">{{ pkg.priceNote }}</span>
+    </div>
+
+    <a href="/contact/" class="mt-6 {{ 'btn-accent' if featured else 'btn-primary' }} w-full">
+      Get started {{ icon("arrow-right", "h-4 w-4") }}
+    </a>
+
+    <div class="my-7 border-t {{ 'border-white/10' if featured else 'border-neutral-200' }}"></div>
+
+    <ul class="flex flex-1 flex-col gap-3.5">
+      {% for f in pkg.features %}{{ check(f, featured) }}{% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
+
+{# --- Inner-page hero --------------------------------------------------- #}
+{% macro pageHero(eyebrow, heading, sub) %}
+  <section class="relative overflow-hidden pt-[calc(var(--header-h)+3.5rem)] pb-14 sm:pb-16 lg:pt-[calc(var(--header-h)+4.5rem)]">
+    <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-gradient-to-b from-chartreuse-50/70 to-transparent"></div>
+    <div class="shell">
+      <div class="max-w-3xl">
+        <span class="eyebrow reveal">{{ eyebrow }}</span>
+        <h1 class="reveal reveal-delay-1 mt-5 text-display">{{ heading }}</h1>
+        {% if sub %}<p class="lede reveal reveal-delay-2 mt-6 max-w-2xl">{{ sub | safe }}</p>{% endif %}
+      </div>
+    </div>
+  </section>
+{% endmacro %}
+
+{# --- Closing call-to-action band --------------------------------------- #}
+{% macro ctaBand(heading="Tell us about your business.", sub="We'll take it from here.") %}
+  <section class="section on-dark relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 grid-lines opacity-60"></div>
+    <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-chartreuse-400/10 blur-3xl"></div>
+    <div class="shell relative">
+      <div class="mx-auto max-w-2xl text-center reveal">
+        <h2 class="text-display-sm">{{ heading }}</h2>
+        <p class="lede mx-auto mt-4 max-w-xl">{{ sub }}</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="/contact/" class="btn-accent">Start by email {{ icon("arrow-right", "h-4 w-4") }}</a>
+          <a href="/website-packages/" class="btn-outline">View packages</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endmacro %}

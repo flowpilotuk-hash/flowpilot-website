@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+*.log
+npm-debug.log*
+
+# local env
+.env
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# legacy build (kept for reference)
+/legacy-eleventy/node_modules
+/legacy-eleventy/_site

@@ -1,0 +1,321 @@
+---
+layout: layouts/base.njk
+title: Professional websites for small businesses
+description: FlowPilot UK builds straightforward websites and digital tools that help small businesses look professional, earn trust and grow with confidence. Everything can begin by email.
+permalink: /
+---
+{% from "components/ui.njk" import icon, packageCard, check, ctaBand %}
+
+{# ============================================================= HERO #}
+<section class="relative overflow-hidden pt-[calc(var(--header-h)+3.5rem)] pb-20 sm:pb-24 lg:pt-[calc(var(--header-h)+5rem)]">
+  <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] bg-gradient-to-b from-chartreuse-50/70 to-transparent"></div>
+  <div class="shell">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="eyebrow reveal">For UK small businesses</span>
+      <h1 class="reveal reveal-delay-1 mt-5 text-display-lg">
+        Your business deserves a professional online presence.
+      </h1>
+      <p class="lede reveal reveal-delay-2 mx-auto mt-6 max-w-2xl">
+        We build straightforward websites and digital tools that help small
+        businesses look professional, earn trust and grow with confidence.
+      </p>
+      <div class="reveal reveal-delay-3 mt-9 flex flex-wrap items-center justify-center gap-3">
+        <a href="/website-packages/" class="btn-accent">View website packages {{ icon("arrow-right", "h-4 w-4") }}</a>
+        <a href="/how-we-work/" class="btn-outline">How we work</a>
+      </div>
+      <p class="reveal reveal-delay-3 mt-6 text-sm text-neutral-500">
+        No lengthy meetings. No jargon. Everything can begin by email.
+      </p>
+    </div>
+
+    {# --- Refined browser mock: our craft, on show --- #}
+    <div class="reveal reveal-delay-3 mx-auto mt-16 max-w-4xl">
+      <div class="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-soft-lg">
+        <div class="flex items-center gap-2 border-b border-neutral-100 bg-neutral-50 px-4 py-3">
+          <span class="h-3 w-3 rounded-full bg-neutral-200"></span>
+          <span class="h-3 w-3 rounded-full bg-neutral-200"></span>
+          <span class="h-3 w-3 rounded-full bg-neutral-200"></span>
+          <span class="ml-3 flex-1 truncate rounded-md bg-white px-3 py-1 text-xs text-neutral-400 ring-1 ring-neutral-200">yourbusiness.co.uk</span>
+        </div>
+        <div class="grid gap-6 p-8 sm:grid-cols-5 sm:p-10">
+          <div class="sm:col-span-3">
+            <div class="inline-flex items-center gap-2 rounded-full bg-chartreuse-100 px-3 py-1 text-xs font-medium text-chartreuse-700">Open for bookings</div>
+            <div class="mt-4 h-8 w-4/5 rounded-md bg-neutral-900"></div>
+            <div class="mt-3 h-3 w-full rounded bg-neutral-200"></div>
+            <div class="mt-2 h-3 w-11/12 rounded bg-neutral-200"></div>
+            <div class="mt-2 h-3 w-3/4 rounded bg-neutral-200"></div>
+            <div class="mt-6 flex gap-3">
+              <div class="h-9 w-32 rounded-full bg-chartreuse-400"></div>
+              <div class="h-9 w-28 rounded-full border border-neutral-300"></div>
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <div class="h-full min-h-[9rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-700"></div>
+          </div>
+          <div class="h-16 rounded-xl bg-neutral-100 sm:col-span-1"></div>
+          <div class="h-16 rounded-xl bg-neutral-100 sm:col-span-1"></div>
+          <div class="h-16 rounded-xl bg-neutral-100 sm:col-span-1"></div>
+          <div class="h-16 rounded-xl bg-neutral-100 sm:col-span-2"></div>
+        </div>
+      </div>
+    </div>
+
+    {# --- Who we help --- #}
+    <div class="reveal mt-14">
+      <p class="text-center text-sm text-neutral-500">Trusted by local businesses across the UK</p>
+      <ul class="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-neutral-400">
+        <li>Trades</li>
+        <li aria-hidden="true" class="text-neutral-300">·</li>
+        <li>Salons &amp; Barbers</li>
+        <li aria-hidden="true" class="text-neutral-300">·</li>
+        <li>Dog Groomers</li>
+        <li aria-hidden="true" class="text-neutral-300">·</li>
+        <li>Restaurants</li>
+        <li aria-hidden="true" class="text-neutral-300">·</li>
+        <li>Accountants</li>
+        <li aria-hidden="true" class="text-neutral-300">·</li>
+        <li>Solicitors</li>
+        <li aria-hidden="true" class="text-neutral-300">·</li>
+        <li>Consultants</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# ============================================================= PROBLEM #}
+<section class="section-tight bg-neutral-50">
+  <div class="shell">
+    <div class="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="reveal lg:col-span-5">
+        <span class="eyebrow">The honest bit</span>
+        <h2 class="mt-4 text-display-sm">Running a business is hard enough.</h2>
+        <p class="mt-4 text-2xl font-medium text-ink">Your website shouldn't be.</p>
+      </div>
+      <div class="reveal reveal-delay-1 lg:col-span-6 lg:col-start-7">
+        <p class="text-lg leading-relaxed text-neutral-600">
+          Whether you're starting from scratch or looking to improve your online
+          presence, we make the process simple.
+        </p>
+        <ul class="mt-8 space-y-4">
+          <li class="flex items-center gap-3 text-lg text-ink">
+            <span class="inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-chartreuse-100 text-chartreuse-700">{{ icon("check", "h-4 w-4") }}</span>
+            No lengthy meetings.
+          </li>
+          <li class="flex items-center gap-3 text-lg text-ink">
+            <span class="inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-chartreuse-100 text-chartreuse-700">{{ icon("check", "h-4 w-4") }}</span>
+            No confusing jargon.
+          </li>
+          <li class="flex items-center gap-3 text-lg text-ink">
+            <span class="inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-chartreuse-100 text-chartreuse-700">{{ icon("check", "h-4 w-4") }}</span>
+            No unnecessary sales calls.
+          </li>
+        </ul>
+        <p class="mt-8 text-lg leading-relaxed text-neutral-600">
+          Just straightforward advice and professional websites built around your business.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================================= PACKAGES PREVIEW #}
+<section class="section">
+  <div class="shell">
+    <div class="mx-auto max-w-2xl text-center reveal">
+      <span class="eyebrow">Website packages</span>
+      <h2 class="mt-4 text-display-sm">Three clear options. No guesswork.</h2>
+      <p class="lede mx-auto mt-4">
+        Straightforward packages designed around what small businesses actually
+        need. Not sure which fits? We'll happily recommend one.
+      </p>
+    </div>
+
+    <div class="mt-14 grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8">
+      {% for pkg in packages %}
+        <div class="reveal reveal-delay-{{ loop.index0 }}">{{ packageCard(pkg) }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="mt-10 text-center reveal">
+      <a href="/website-packages/" class="link-arrow">Compare packages in full {{ icon("arrow-right", "h-4 w-4") }}</a>
+    </div>
+  </div>
+</section>
+
+{# ============================================================= PROCESS #}
+<section class="section on-dark relative overflow-hidden">
+  <div class="pointer-events-none absolute inset-0 grid-lines opacity-50"></div>
+  <div class="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-chartreuse-400/10 blur-3xl"></div>
+  <div class="shell relative">
+    <div class="mx-auto max-w-2xl text-center reveal">
+      <span class="eyebrow">How it works</span>
+      <h2 class="mt-4 text-display-sm">Three steps. That's it.</h2>
+      <p class="lede mx-auto mt-4">
+        We've stripped the process back to what matters, so getting a
+        professional website feels effortless.
+      </p>
+    </div>
+
+    <ol class="mt-16 grid gap-8 lg:grid-cols-3 lg:gap-6">
+      {% for step in process %}
+        <li class="reveal reveal-delay-{{ loop.index0 }} relative flex flex-col rounded-2xl border border-white/10 bg-ink-800 p-8">
+          <span class="font-display text-5xl font-semibold text-chartreuse-400">{{ step.step }}</span>
+          <h3 class="mt-5 text-xl font-semibold text-white">{{ step.title }}</h3>
+          <p class="mt-3 text-[0.95rem] leading-relaxed text-neutral-400">{{ step.description }}</p>
+          {% if not loop.last %}
+            <span class="absolute -bottom-6 left-1/2 z-10 -translate-x-1/2 text-chartreuse-400 lg:-right-5 lg:bottom-1/2 lg:left-auto lg:translate-x-0 lg:translate-y-1/2" aria-hidden="true">
+              <span class="lg:hidden">{{ icon("arrow-down", "h-6 w-6") }}</span>
+              <span class="hidden lg:inline">{{ icon("arrow-right", "h-6 w-6") }}</span>
+            </span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{# ============================================================= WHY WE STARTED #}
+<section class="section">
+  <div class="shell">
+    <div class="mx-auto max-w-3xl text-center reveal">
+      <span class="eyebrow">Why we started</span>
+      <p class="mt-6 font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
+        We believe small businesses deserve professional online tools without
+        expensive agencies, confusing processes or wasted time.
+      </p>
+      <p class="mt-8 text-lg text-neutral-500">
+        Our goal is simple: to make improving your online presence straightforward.
+      </p>
+      <div class="mt-8">
+        <a href="/about/" class="link-arrow">Read our story {{ icon("arrow-right", "h-4 w-4") }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================================= PRINCIPLES #}
+<section class="section bg-neutral-50">
+  <div class="shell">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="reveal lg:col-span-4">
+        <span class="eyebrow">What we stand for</span>
+        <h2 class="mt-4 text-display-sm">Principles we don't bend on.</h2>
+        <p class="mt-4 text-lg leading-relaxed text-neutral-600">
+          Four simple commitments that shape every decision we make — and every
+          website we build.
+        </p>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="grid gap-5 sm:grid-cols-2">
+          {% for p in principles %}
+            <div class="reveal reveal-delay-{{ loop.index0 % 2 }} rounded-2xl border border-neutral-200 bg-white p-7 transition-all duration-300 ease-gentle hover:-translate-y-1 hover:shadow-soft">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-ink text-chartreuse-400">
+                {{ icon(["clock-fast","spark","handshake","shield"][loop.index0], "h-5 w-5") }}
+              </span>
+              <h3 class="mt-5 text-lg font-semibold text-ink">{{ p.title }}</h3>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-neutral-500">{{ p.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================================= FAQ #}
+<section class="section">
+  <div class="shell">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="reveal lg:col-span-4">
+        <span class="eyebrow">Good questions</span>
+        <h2 class="mt-4 text-display-sm">Frequently asked.</h2>
+        <p class="mt-4 text-lg leading-relaxed text-neutral-600">
+          Still wondering about something? Email us any time at
+          <a href="mailto:{{ site.contact.email }}" class="text-ink underline decoration-chartreuse-400 decoration-2 underline-offset-4 hover:text-chartreuse-600">{{ site.contact.email }}</a>.
+        </p>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="reveal divide-y divide-neutral-200 border-y border-neutral-200" data-accordion>
+          {% for faq in faqs %}
+            <div data-accordion-item>
+              <h3>
+                <button
+                  type="button"
+                  class="flex w-full items-center justify-between gap-6 py-6 text-left"
+                  data-accordion-trigger
+                  aria-expanded="false"
+                  aria-controls="faq-panel-{{ loop.index }}"
+                  id="faq-trigger-{{ loop.index }}"
+                >
+                  <span class="text-lg font-medium text-ink">{{ faq.q }}</span>
+                  <span class="accordion-icon inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-neutral-100 text-ink">
+                    {{ icon("plus", "h-4 w-4") }}
+                  </span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-panel-{{ loop.index }}"
+                role="region"
+                aria-labelledby="faq-trigger-{{ loop.index }}"
+              >
+                <p class="pb-6 pr-12 text-[0.95rem] leading-relaxed text-neutral-600">{{ faq.a }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================================= CONTACT #}
+<section class="section bg-neutral-50" id="contact">
+  <div class="shell">
+    <div class="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="reveal lg:col-span-5">
+        <span class="eyebrow">Contact</span>
+        <h2 class="mt-4 text-display-sm">Tell us about your business.</h2>
+        <p class="lede mt-4">We'll take it from here.</p>
+        <div class="mt-8 space-y-4">
+          <a href="mailto:{{ site.contact.email }}" class="flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-300">
+            <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-chartreuse-400">{{ icon("mail", "h-5 w-5") }}</span>
+            <span>
+              <span class="block text-sm text-neutral-500">Email us</span>
+              <span class="block font-medium text-ink">{{ site.contact.email }}</span>
+            </span>
+          </a>
+          <a href="tel:{{ site.contact.phone }}" class="flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-300">
+            <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-chartreuse-400">{{ icon("phone", "h-5 w-5") }}</span>
+            <span>
+              <span class="block text-sm text-neutral-500">Call us · {{ site.contact.hoursShort }}</span>
+              <span class="block font-medium text-ink">{{ site.contact.phoneDisplay }}</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1 lg:col-span-7">
+        <div class="rounded-3xl border border-neutral-200 bg-white p-6 shadow-soft sm:p-8">
+          {% include "partials/contact-form.njk" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# --- Home FAQ structured data (valid anywhere in the document) --- #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for faq in faqs %}
+    {
+      "@type": "Question",
+      "name": {{ faq.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ faq.a | dump | safe }} }
+    }{{ "," if not loop.last }}
+    {%- endfor %}
+  ]
+}
+</script>

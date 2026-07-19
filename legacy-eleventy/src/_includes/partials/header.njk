@@ -1,0 +1,54 @@
+{% from "components/ui.njk" import icon, logo %}
+<header class="site-header" data-header>
+  <div class="shell">
+    <div class="flex h-[var(--header-h)] items-center justify-between">
+      <a href="/" class="inline-flex items-center rounded-lg" aria-label="{{ site.brand }} — home">
+        {{ logo() }}
+      </a>
+
+      {# --- Desktop nav --- #}
+      <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        {% for item in site.nav %}
+          {% if item.url != "/" %}
+            <a
+              href="{{ item.url }}"
+              class="nav-link"
+              {% if page.url == item.url %}aria-current="page"{% endif %}
+            >{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
+      <div class="hidden items-center gap-3 lg:flex">
+        <a href="tel:{{ site.contact.phone }}" class="nav-link">{{ site.contact.phoneDisplay }}</a>
+        <a href="/contact/" class="btn-accent">Get in touch</a>
+      </div>
+
+      {# --- Mobile toggle --- #}
+      <button
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-lg text-ink lg:hidden"
+        data-nav-toggle
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+      >
+        <span class="sr-only">Menu</span>
+        {{ icon("menu", "h-6 w-6") }}
+      </button>
+    </div>
+  </div>
+
+  {# --- Mobile menu --- #}
+  <div class="mobile-menu" id="mobile-menu" data-nav-menu>
+    <nav class="flex flex-col" aria-label="Mobile">
+      {% for item in site.nav %}
+        <a href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+    <div class="mt-8 flex flex-col gap-3">
+      <a href="/contact/" class="btn-accent w-full">Get in touch</a>
+      <a href="tel:{{ site.contact.phone }}" class="btn-outline w-full">Call {{ site.contact.phoneDisplay }}</a>
+    </div>
+  </div>
+</header>
