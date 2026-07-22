@@ -21,7 +21,7 @@ const config: Config = {
         ink: {
           DEFAULT: "#FFFFFF",
           secondary: "#B3B3B3",
-          muted: "#6E6E6E",
+          muted: "#8A8A8A",
         },
         chartreuse: {
           DEFAULT: "#B6FF00",

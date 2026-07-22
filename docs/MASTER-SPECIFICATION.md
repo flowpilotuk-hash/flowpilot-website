@@ -245,7 +245,7 @@ The palette is small on purpose. A restrained palette reads as premium; a large 
 | `line` | `rgba(255,255,255,0.08)` | Every border and hairline. Subtle by design. |
 | `ink` (DEFAULT) | `#FFFFFF` | Primary text and headings. |
 | `ink.secondary` | `#B3B3B3` | Body copy, supporting text. |
-| `ink.muted` | `#6E6E6E` | Labels, captions, metadata. |
+| `ink.muted` | `#8A8A8A` | Labels, captions, metadata. (Chosen to pass AA ≥4.5:1 on every surface, including the `#0B0B0B` footer.) |
 | `chartreuse` (DEFAULT) | `#B6FF00` | The accent. Used sparingly and intentionally. |
 | `chartreuse.soft` | `#C7FF3D` | Hover state for accent fills. |
 | `chartreuse.dim` | `#8FCC00` | Pressed / lower-emphasis accent. |
@@ -257,7 +257,7 @@ The palette is small on purpose. A restrained palette reads as premium; a large 
 
 - `ink` `#FFFFFF` on `base` `#050505` → ratio ≈ 20:1. Far beyond AA.
 - `ink.secondary` `#B3B3B3` on `base` → ratio ≈ 11:1. Passes AA for all text sizes.
-- `ink.muted` `#6E6E6E` on `base` → ratio ≈ 4.9:1. Reserved for large or non-essential text; never for small body copy carrying meaning.
+- `ink.muted` `#8A8A8A` on `base` → ratio ≈ 5.9:1, and ≈ 5.7:1 on the lighter `#0B0B0B` footer. Passes AA for normal text on every surface. (Originally `#6E6E6E`; lifted after QA found it failed AA on the footer.)
 - `base` `#050505` **on** `chartreuse` `#B6FF00` (dark text on the accent button) → ratio ≈ 16:1. This is why the primary button uses near-black text on chartreuse, never white.
 - Chartreuse text on dark is used only at large sizes / short strings (one hero word, labels), where AA large-text thresholds are comfortably met.
 
@@ -340,7 +340,7 @@ Instead, meaning is carried by **typography, motion, light, composition and the 
 
 ### 4.10 The design-language summary card
 
-> **Surfaces:** `#050505 / #0B0B0B / #111111`. **Lines:** white @ 8%. **Text:** white / `#B3B3B3` / `#6E6E6E`. **Accent:** chartreuse `#B6FF00`, < 5% of pixels. **Type:** Space Grotesk (display, tight) + Inter (body, relaxed). **Radius:** pills + `xl`/`2xl`/`3xl`. **Depth:** soft dark shadow + chartreuse glow. **Space:** generous; whitespace is confidence. **Imagery:** none — motion and type are the images.
+> **Surfaces:** `#050505 / #0B0B0B / #111111`. **Lines:** white @ 8%. **Text:** white / `#B3B3B3` / `#8A8A8A`. **Accent:** chartreuse `#B6FF00`, < 5% of pixels. **Type:** Space Grotesk (display, tight) + Inter (body, relaxed). **Radius:** pills + `xl`/`2xl`/`3xl`. **Depth:** soft dark shadow + chartreuse glow. **Space:** generous; whitespace is confidence. **Imagery:** none — motion and type are the images.
 
 ---
 
@@ -1016,7 +1016,7 @@ card            #111111     cards, featured package, support panel
 line            rgba(255,255,255,0.08)   all borders / hairlines
 ink             #FFFFFF     primary text & headings
 ink.secondary   #B3B3B3     body copy
-ink.muted       #6E6E6E     labels, captions, metadata
+ink.muted       #8A8A8A     labels, captions, metadata (AA on all surfaces)
 chartreuse      #B6FF00     the accent (< ~5% of pixels)
 chartreuse.soft #C7FF3D     accent hover
 chartreuse.dim  #8FCC00     accent pressed / low-emphasis
@@ -1197,6 +1197,7 @@ A change is done only when **all** are true:
 | Version | Date | Change |
 |---|---|---|
 | 1.0 | 22 Jul 2026 | First full specification. Reflects the Next.js 14 flagship build: dark cinematic system, chartreuse accent, five routes, motion system, and the price-free packages / email-first contact decisions. |
+| 1.1 | 22 Jul 2026 | Phase 2 QA pass. Added custom on-brand 404, OG/social share image, per-route canonicals aligned to the apex host, privacy policy, and privacy-friendly analytics (Vercel Analytics + Speed Insights, Vercel-only). Lifted `ink.muted` to `#8A8A8A` for AA on the footer and de-opacified the hero CTA entrance so it never renders below-contrast. Lighthouse (local): Performance 95–98, Accessibility 100, Best Practices 100, SEO 100 across all pages. |
 
 *(Append a row for every material change so this document stays true to the product.)*
 

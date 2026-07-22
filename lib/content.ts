@@ -11,7 +11,7 @@ export const brand = {
   tagline: "Keep your business moving.",
   description:
     "FlowPilot builds professional websites and digital tools that help small businesses earn trust, attract customers and stay organised online.",
-  url: "https://www.flowpilotuk.com",
+  url: "https://flowpilotuk.com",
   email: "hello@flowpilotuk.com",
   hoursShort: "Mon–Fri, 9am–5pm",
 } as const;

@@ -6,7 +6,12 @@ import { WhyWeStarted } from "@/components/home/WhyWeStarted";
 import { Principles } from "@/components/home/Principles";
 import { FAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/ui/FinalCTA";
+import type { Metadata } from "next";
 import { brand, faqs } from "@/lib/content";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const faqJsonLd = {
   "@context": "https://schema.org",

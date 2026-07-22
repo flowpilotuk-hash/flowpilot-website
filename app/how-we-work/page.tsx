@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "How We Work",
   description:
     "A simple, honest process from first email to launch and beyond — discovery, quote, payment, intake, build, launch and ongoing support. Mostly handled by email, around your schedule.",
+  alternates: { canonical: "/how-we-work" },
 };
 
 const promises = [

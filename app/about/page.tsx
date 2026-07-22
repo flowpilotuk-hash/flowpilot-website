@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "We started FlowPilot because small businesses deserve professional online tools without expensive agencies, confusing processes or wasted time. Our mission is simple — make it straightforward.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

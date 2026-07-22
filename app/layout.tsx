@@ -6,6 +6,8 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { CursorGlow } from "@/components/effects/CursorGlow";
 import { Providers } from "@/components/Providers";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -79,6 +81,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main">{children}</main>
           <Footer />
         </Providers>
+        {/* Vercel-only: these scripts are served by the platform, so mounting
+            them elsewhere just 404s. Enable Web Analytics + Speed Insights in
+            the Vercel dashboard for data to appear. */}
+        {process.env.VERCEL === "1" && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   );

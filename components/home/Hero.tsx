@@ -155,8 +155,8 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={show ? { opacity: 1, y: 0 } : {}}
+            initial={{ y: 14 }}
+            animate={show ? { y: 0 } : {}}
             transition={{ duration: 0.7, ease: EASE_GENTLE, delay: 0.82 }}
             className="mt-9 flex flex-wrap items-center justify-center gap-3"
           >

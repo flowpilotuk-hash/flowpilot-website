@@ -29,8 +29,9 @@ export function PricingBoard() {
   return (
     <>
       {/* Cards */}
-      <section className="pb-8 pt-2 sm:pb-12">
+      <section className="pb-8 pt-2 sm:pb-12" aria-labelledby="packages-heading">
         <div className="shell">
+          <h2 id="packages-heading" className="sr-only">Our website packages</h2>
           <motion.div
             variants={stagger}
             initial="hidden"

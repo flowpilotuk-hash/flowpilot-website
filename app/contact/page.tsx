@@ -7,7 +7,8 @@ import { brand, hours } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Tell us about your business and we'll take it from here. Reach FlowPilot by email or phone — everything can begin by email, with no scheduling software and no pressure.",
+    "Tell us about your business and we'll take it from here. Reach FlowPilot by email — everything can begin by email, with no scheduling software and no pressure.",
+  alternates: { canonical: "/contact" },
 };
 
 function MailIcon() {

@@ -77,7 +77,10 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-line pt-8 text-sm text-ink-muted sm:flex-row sm:items-center">
-          <p>© {year} {brand.legalName}. All rights reserved.</p>
+          <p className="inline-flex items-center gap-4">
+            <span>© {year} {brand.legalName}. All rights reserved.</span>
+            <Link href="/privacy" className="transition-colors hover:text-ink">Privacy</Link>
+          </p>
           <p className="inline-flex items-center gap-2">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-chartreuse shadow-[0_0_10px_1px_rgba(182,255,0,0.7)]" />
             Built and looked after in the UK.

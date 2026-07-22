@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Packages",
   description:
     "Website packages for UK small businesses — Essential, Professional and Business Growth — plus optional extras and a Monthly Business Support Plan. Every website quoted individually.",
+  alternates: { canonical: "/packages" },
 };
 
 export default function PackagesPage() {
